@@ -71,8 +71,8 @@ int main(int argc, char **argv) {
     }
 
   if (generateKey == 1) genKey(KEY_BIT_LEN, outFile, verbose); 
-  if (encrypt == 1) encryptDataWithKey(messageFileName, keyFileName, outFile, verbose);
-  if (decrypt == 1) decryptDataWithKey(messageFileName, keyFileName, outFile, verbose);
+  if ((encrypt == 1) && (decrypt == 0)) encryptDataWithKey(messageFileName, keyFileName, outFile, verbose);
+  if ((decrypt == 1) && (encrypt == 0)) decryptDataWithKey(messageFileName, keyFileName, outFile, verbose);
 
   return 0;
 }
